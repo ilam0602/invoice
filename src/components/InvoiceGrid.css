@@ -1,0 +1,15 @@
+.gridDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Or you can set a specific height if needed */
+}
+table,th,td{
+    border: 1px solid;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding: 0.5rem 0.5rem 
+}

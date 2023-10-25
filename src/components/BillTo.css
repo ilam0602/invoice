@@ -1,0 +1,25 @@
+.bill-to-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Changed from 'start' to 'flex-start' */
+    width:25%;
+    padding-bottom:5rem;
+}
+
+.bill-to-input {
+    width: 100%; /* Take the full available width */
+    margin-top: 10px; /* Add a little space between inputs */
+    padding: 5px; /* Make inputs a bit comfortable */
+    font-size: .9em; /* Make text size same as surrounding text */
+    border: 1px solid black; /* Give a border to make it noticeable */
+    border-radius: 4px; /* Slight rounded corners for aesthetics */
+    background-color: white;
+    color:black;
+}
+
+.bill-to-input:focus {
+    outline: none; /* Remove browser default outline */
+    border-color: #007BFF; /* Highlight input border when focused */
+}
+
+

@@ -1,31 +1,74 @@
+@import './print.css' print;
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  background-color: white; /* Adjusting to dark background similar to the image */
+  color: black;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: white; /* Background to match the image */
+  padding: 2.5rem; /* Added some padding for spacing */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(10px + 1vmin);
+}
+
+.App-body {
+  display: flex; /* Aligning children horizontally */
+  justify-content: space-between; /* Space out the children equally */
+  padding: 0 2.5rem; /* Adding some horizontal padding for aesthetics */
+}
+
+/* Specific stylings for the individual components. Adjust as needed */
+
+.InvoiceHeader {
+  font-size: 3rem; /* Adjusting font size */
+  margin-bottom: 1rem;
+}
+
+.BillTo, .ShipTo, .InvoiceNum {
+  flex: 1; /* Taking equal space */
+  padding: 0 1rem; /* Giving some padding to each section */
+  font-size: 1rem; /* Adjusting font size */
+}
+
+/* Removing unnecessary styles */
+.App-logo {
+  display: none; /* You might not need the logo */
 }
 
 .App-link {
-  color: #61dafb;
+  display: none; /* Removing link styles */
+}
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Pushes children to the edges */
+  align-items: center; /* Vertically centers the children */
+  width: 100%; /* Ensures the container takes up full available width */
+}
+
+.brand-info {
+  text-align: left; /* Aligns content to the left */
+  flex: 1; /* Allows it to take up space, but it's the text alignment that will push content to the edge */
+}
+
+.invoice-title {
+  width:33%;
+  text-align: right; /* Aligns content to the right */
+}
+
+.InvoiceGrid, .BalanceComponent {
+  margin: 0 auto; /* Center horizontally */
+  display: flex;  /* Used to help center vertically */
+  justify-content: center; /* Center content horizontally inside */
+  align-items: center; /* Center content vertically inside */
+  width: 80%; /* Example width, adjust as needed */
+}
+.InvoiceGrid {
+  margin-bottom: 2rem; /* Example spacing, adjust as needed */
 }
 
 @keyframes App-logo-spin {
