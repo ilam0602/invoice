@@ -4,8 +4,9 @@ import './InvoiceGrid.css';
 const InvoiceGrid = ({ items, setItems }) => {
 
   const addNewItem = () => {
-    setItems([...items, { description: '', quantity: 0, unitPrice: 0 }]);
-  };
+    setItems([...items, { description: '', quantity: '', unitPrice: '' }]);
+};
+
 
   const updateItem = (index, field, value) => {
     const newItems = [...items];
@@ -35,8 +36,8 @@ const InvoiceGrid = ({ items, setItems }) => {
           {items.map((item, index) => (
             <tr key={index}>
               <td><input type="text" value={item.description} onChange={(e) => updateItem(index, 'description', e.target.value)} /></td>
-              <td><input type="number" value={item.quantity} onChange={(e) => updateItem(index, 'quantity', +e.target.value)} /></td>
-              <td>$<input type="number" step="0.01" value={item.unitPrice} onChange={(e) => updateItem(index, 'unitPrice', +e.target.value)} /></td>
+              <td><input type="number" value={item.quantity} onChange={(e) => updateItem(index, 'quantity', e.target.value === '' ? '' : +e.target.value)} /></td>
+              <td>$<input type="number" step="0.01" value={item.unitPrice} onChange={(e) => updateItem(index, 'unitPrice', e.target.value === '' ? '' : +e.target.value)} /></td>
               <td>${(item.quantity * item.unitPrice).toFixed(2)}</td>
               <td class = "td-no-show"><button onClick={() => deleteItem(index)}>Delete</button></td> {/* New delete button */}
             </tr>
