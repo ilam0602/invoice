@@ -23,3 +23,31 @@
 }
 
 
+
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.name-dropdown {
+    top: 100%; /* This will now be relative to the input field */
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: #fff;
+}
+
+
+
+.name-dropdown li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.name-dropdown li:hover {
+    background-color: #eee;
+}
