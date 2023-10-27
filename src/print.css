@@ -16,6 +16,6 @@ input{
     border:none!important
 }
 
-.add-item-button, .td-no-show, .th-no-show{
+.add-item-button, .td-no-show, .th-no-show, .po-check{
     display:none;
 }
