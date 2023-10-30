@@ -33,8 +33,8 @@ const InvoiceGrid = ({ items, setItems }) => {
       <table className="invoiceTable">
         <thead>
           <tr>
-            <th className = "des-col">Description</th>
             {showPO && <th>PO</th>}  {/* Conditionally render PO header */}
+            <th className = "des-col">Description</th>
             <th>Quantity</th>
             <th>Unit Price</th>
             <th>Total</th>
@@ -44,8 +44,8 @@ const InvoiceGrid = ({ items, setItems }) => {
         <tbody>
           {items.map((item, index) => (
             <tr key={index}>
-              <td><input type="text" value={item.description} onChange={(e) => updateItem(index, 'description', e.target.value)} /></td>
               {showPO && <td><input type="text" value={item.po} onChange={(e) => updateItem(index, 'po', e.target.value)} /></td>}  {/* Conditionally render PO input */}
+              <td><input type="text" value={item.description} onChange={(e) => updateItem(index, 'description', e.target.value)} /></td>
               <td><input type="number" value={item.quantity} onChange={(e) => updateItem(index, 'quantity', e.target.value === '' ? '' : +e.target.value)} /></td>
               <td>$<input type="number" step="0.01" value={item.unitPrice} onChange={(e) => updateItem(index, 'unitPrice', e.target.value === '' ? '' : +e.target.value)} /></td>
               <td>${(item.quantity * item.unitPrice).toFixed(2)}</td>
