@@ -33,12 +33,12 @@ const InvoiceGrid = ({ items, setItems }) => {
       <table className="invoiceTable">
         <thead>
           <tr>
-            {showPO && <th>PO</th>}  {/* Conditionally render PO header */}
-            <th className = "des-col">Description</th>
+            {showPO ? <th>PO</th> : null}
+            <th className="des-col">Description</th>
             <th>Quantity</th>
             <th>Unit Price</th>
             <th>Total</th>
-            <th class="th-no-show"></th>
+            <th className="th-no-show"></th>
           </tr>
         </thead>
         <tbody>
@@ -49,7 +49,7 @@ const InvoiceGrid = ({ items, setItems }) => {
               <td><input type="number" value={item.quantity} onChange={(e) => updateItem(index, 'quantity', e.target.value === '' ? '' : +e.target.value)} /></td>
               <td>$<input type="number" step="0.01" value={item.unitPrice} onChange={(e) => updateItem(index, 'unitPrice', e.target.value === '' ? '' : +e.target.value)} /></td>
               <td>${(item.quantity * item.unitPrice).toFixed(2)}</td>
-              <td class="td-no-show"><button onClick={() => deleteItem(index)}>Delete</button></td>
+              <td className="td-no-show"><button onClick={() => deleteItem(index)}>Delete</button></td>
             </tr>
           ))}
         </tbody>

@@ -1,0 +1,21 @@
+/* print.css */
+
+/* Adjustments for the print layout if needed */
+.Ty-body, .Ty {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background: none;
+}
+
+/* .bill-to-input, .ship-to-input ,.invoice-num-input{
+    border: none !important;
+} */
+input{
+    border:none!important
+}
+
+.add-item-button, .td-no-show, .th-no-show, .po-check,.print_button{
+    display:none;
+}
