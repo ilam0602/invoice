@@ -9,6 +9,7 @@ import BalanceComponent from './components/BalanceComponent';
 import InvoiceNum from './components/InvoiceNum';
 import PrintButton from './components/PrintButton'
 import TyFashion from './pages/TyFashion'; // Import your TyFashion component
+import Edit from './pages/Edit'; // Import your TyFashion component
 
 function App() {
   const [items, setItems] = useState([]);
@@ -18,6 +19,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/tyfashion" element={<TyFashion />} />
+          <Route path="/edit" element={<Edit />} />
           <Route path="/" element={
             <>
               <header className="App-header">
