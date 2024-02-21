@@ -13,6 +13,12 @@ table,th,td{
     width:33%;
 }
 
+textarea{
+    row: 1;
+    resize:none;
+    
+}
+
 th,td{
     padding: 0.5rem 0.5rem 
 }

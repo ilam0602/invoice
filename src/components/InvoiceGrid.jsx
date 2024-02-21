@@ -20,6 +20,11 @@ const InvoiceGrid = ({ items, setItems }) => {
     setItems(newItems);
   };
 
+  const autoResizeTextarea = (e) => {
+    e.target.style.height = 'inherit';
+    e.target.style.height = `${e.target.scrollHeight}px`;
+  };
+
   return (
     <div className="gridDiv">
       {/* Checkbox to toggle PO column visibility */}
@@ -45,7 +50,7 @@ const InvoiceGrid = ({ items, setItems }) => {
           {items.map((item, index) => (
             <tr key={index}>
               {showPO && <td><input type="text" value={item.po} onChange={(e) => updateItem(index, 'po', e.target.value)} /></td>}  {/* Conditionally render PO input */}
-              <td><input type="text" value={item.description} onChange={(e) => updateItem(index, 'description', e.target.value)} /></td>
+              <td><textarea rows = "1" type="text" value={item.description} onChange={(e) => {updateItem(index, 'description', e.target.value);autoResizeTextarea(e);}} /></td>
               <td><input type="number" value={item.quantity} onChange={(e) => updateItem(index, 'quantity', e.target.value === '' ? '' : +e.target.value)} /></td>
               <td>$<input type="number" step="0.01" value={item.unitPrice} onChange={(e) => updateItem(index, 'unitPrice', e.target.value === '' ? '' : +e.target.value)} /></td>
               <td>${(item.quantity * item.unitPrice).toFixed(2)}</td>

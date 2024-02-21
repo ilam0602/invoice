@@ -15,7 +15,9 @@
 input{
     border:none!important
 }
-
+textarea{
+    border:none!important;
+}
 .add-item-button, .td-no-show, .th-no-show, .po-check,.print_button{
     display:none;
 }
